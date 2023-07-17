@@ -1,0 +1,16 @@
+const PORT = 3000
+
+function server(req,res){
+  const {method} = req
+
+  switch(method){
+    case 'GET':
+      res.end('<h1>servidor creado</h1>')
+      break
+  }
+}
+
+function msm(){
+  console.log('corriendo server en ',PORT)
+}
+require('http').createServer(server).listen(PORT,msm)

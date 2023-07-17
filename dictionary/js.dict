@@ -1,0 +1,63 @@
+console error log assert clear time timeEnd warn table count group groupEnd
+create
+textContent innerText
+
+const let var
+
+querySelector
+
+require module exports process exit default addEventListener matches target document removeEventListener DOMContentLoaded
+click toggle classList
+
+else if try catch
+
+false true null
+
+includes import from
+
+customElements define window mode opensuper extends cloneNode shadowRoot disconnectedCallback observedAttributes
+
+forEach while 
+
+function return
+
+length
+
+class constructor this
+
+push
+
+undefined
+
+enableHighAccuracy timeout maximumAge navigator getCurrentPosition geolocation
+setInterval
+innerHTML
+
+preventDefault
+
+localStorage setItem getItem submit
+
+location hash
+
+stringify JSON toString
+async new await 
+innerWidth
+mouseover mouseleave
+mouseenter dataset
+prototype
+appendChild
+yield
+static
+super
+exec
+slice
+callback
+setAttribute
+getAttribute
+
+getOwnPropertyDescriptors Object isSealed getOwnPropertyNames setPrototypeOf
+isFrozen
+toUpperCase
+
+
+Buffer toJSON readFileSync createReadStream encoding

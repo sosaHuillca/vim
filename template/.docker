@@ -1,0 +1,10 @@
+FROM node:lts-alpine3.18
+run apk add --update nodejs npm
+
+WORKDIR /app
+run mkdir src
+
+run npm init -y
+run npm i express
+
+CMD ["npx","nodemon","src/main.js"]

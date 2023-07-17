@@ -1,0 +1,25 @@
+import { LitElement, css, html } from 'lit'
+
+export class MyElement extends LitElement {
+  static get properties() {
+    return {
+      //count: { type: Number }
+    }
+  }
+  constructor() {
+    super()
+    //this.count = 0
+  }
+
+  render() {
+    return html`
+    `
+  }
+  
+  static get styles() {
+    return css`
+    `
+  }
+}
+
+export default customElements.define('-', MyElement)

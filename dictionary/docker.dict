@@ -1,0 +1,4 @@
+version nginx run from cmd touch workdir ports container_name
+services build context dockerfile Dockerfile 
+image restart always environment volumes networks driver ipam name
+node
