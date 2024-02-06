@@ -62,3 +62,45 @@ nnoremap ,6 <c-w>6<c-w>
 nnoremap ,7 <c-w>7<c-w>
 nnoremap ,8 <c-w>8<c-w>
 nnoremap ,9 <c-w>9<c-w>
+
+
+function! Template(tipo)
+    exec ":-1read /home/sosa/.vim/template/." . a:tipo
+endfunction 
+
+function! Tagblock(elemento)
+  call append('.','<'.a:elemento.' class=""></'.a:elemento.'>')
+  exec 'normal Jf<'
+endfunction 
+function! Tagreturn(elemento)
+  return a:elemento
+endfunction 
+iab span Span
+inoremap Span <<esc>:call Tagreturn("span")<cr>ihola
+
+function! Tagclass(elemento)
+  call append('.','<'.a:elemento.' class=""></'.a:elemento.'>')
+  exec 'normal J2f"'
+endfunction 
+
+function! Tag(elemento)
+  call append('.',"<".a:elemento."></".a:elemento.">")
+  exec "normal Jf>a"
+endfunction 
+iab fun Function
+inoremap Function <esc>:call Template("fun")<cr>
+iab html5 Html5
+inoremap Html5 <esc>:call Template("web")<cr>
+iab wc Wc
+inoremap Wc <esc>:call Template("wcom")<cr>
+
+iab section Section
+inoremap Section <esc>:call Tag("section")<cr>
+iab div Div
+inoremap Div <esc>:call Tag("div")<cr>
+iab header Header
+inoremap Header <esc>:call Tag("header")<cr>
+iab nav. Nav
+inoremap Nav <esc>:call Tagclass("nav")<cr>
+iab aside. Aside
+inoremap Aside <esc>:call Tagblock("aside")<cr>
