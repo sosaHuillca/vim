@@ -1,13 +1,10 @@
 source $HOME/.vim/funciones/templateInit.vim
 
-
 syntax enable
 
 filetype plugin indent on
-
 set background=dark
 colorscheme retrobox
-
 
 set path-=**
 set path+=**
@@ -15,33 +12,65 @@ set path-=/usr/include
 
 
 set cursorline
+set incsearch
+set wildmenu
+
+
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set rnu
 
-
+set splitbelow splitright
 
 set nobackup
 set nowritebackup
 set noswapfile
+set autoindent
+set lazyredraw
+set ttyfast
+"configuracion
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 20
+let g:netrw_banner = 0
 
+set omnifunc=syntaxcomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+let g:netrw_liststyle = 4
+"let g:netrw_winsize = 25
+"let g:netrw_browse_split = 4
+set splitbelow splitright
 
+let g:netrw_banner = 0
+"let g:netrw_preview = 1
+
+"let g:netrw_alto = 1
+"let g:netrw_splitbelow = 0
 autocmd BufEnter *.js if &filetype == 'javascript' | call Js() | endif
-autocmd BufEnter *.html if &filetype == 'html' | call Html() | endif
-autocmd BufEnter *.css if &filetype == 'css' | call Css() | endif
-autocmd BufEnter *.php if &filetype == 'php' | call Php() | endif
-
-
 
 "copy
 vnoremap <c-C> "+y
+inoremap <c-k> <c-x><c-k>
+inoremap <c-l> <esc>la
 
+nnoremap <space>h <c-w><c-h>
+nnoremap <space>l <c-w><c-l>
+nnoremap <space>k <c-w><c-k>
+nnoremap <space>j <c-w><c-j>
 
+nnoremap <F5> :lcd %:p:h<cr>
 
 " Define la autocmd para archivos HTML
 autocmd BufNewFile,BufRead *.html execute "read $HOME/.vim/template/.web"
 
 
+let g:netrw_browsex_viewer= "firefox"
 
 
 set statusline+=\ [№\ %{WindowNumber()}]✔\ %t\ ✘(№\ %n)
