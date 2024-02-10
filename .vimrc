@@ -119,17 +119,3 @@ endfunction
 iab fun Function
 inoremap Function <esc>:call Template("fun")<cr>
 iab html5 Html5
-inoremap Html5 <esc>:call Template("web")<cr>
-iab wc Wc
-inoremap Wc <esc>:call Template("wcom")<cr>
-
-iab section Section
-inoremap Section <esc>:call Tag("section")<cr>
-iab div Div
-inoremap Div <esc>:call Tag("div")<cr>
-iab header Header
-inoremap Header <esc>:call Tag("header")<cr>
-iab nav. Nav
-inoremap Nav <esc>:call Tagclass("nav")<cr>
-iab aside. Aside
-inoremap Aside <esc>:call Tagblock("aside")<cr>
