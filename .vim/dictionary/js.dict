@@ -58,6 +58,6 @@ getAttribute
 getOwnPropertyDescriptors Object isSealed getOwnPropertyNames setPrototypeOf
 isFrozen
 toUpperCase
-
+HTMLElement
 
 Buffer toJSON readFileSync createReadStream encoding

@@ -1,32 +1,29 @@
-window.customElements.define('-',
-class Element extends HTMLElement {
+HTMLElement {
   
   static get observedAttributes(){
-    return [
-    ];
+    return [];
   }
 
-  html(){
-    return `
+  html(){ return `
+
     `;
   }
 
-  style(){
-    return `
+  style(){ return `
+
     `;
   }
 
   connectedCallback(){
+
   }
 
   constructor(){super();
     this.attachShadow({mode:'open'});
-    this.render();
   }
 
-  attributeChangedCallback(attr, oldVal, newVal){
-    this[attr] = newVal
-    this.render();
+  attributeChangedCallback(prop, oldVal, newVal){
+    this[prop] = this.render();
   }
 
   render(){
@@ -34,6 +31,8 @@ class Element extends HTMLElement {
       <style>${this.style()}</style>
       ${this.html()}
     `;
+  }
+
 }
 
-})
+window.customElements.define('-',)

@@ -61,7 +61,7 @@ noremap : ;
 "copy
 vnoremap <c-C> "+y
 "complete dictionary
-inoremap <c-k> <c-x><c-k>
+inoremap <c-k> <c-x><c-k><c-p>
 "next right insert
 inoremap <c-l> <c-o>a
 
@@ -70,10 +70,26 @@ nnoremap <space>l <c-w><c-l>
 nnoremap <space>k <c-w><c-k>
 nnoremap <space>j <c-w><c-j>
 
+let size_max = 10
+let size_min = 1
+execute 'nnoremap <left> ' . size_max . '<c-w><'
+execute 'nnoremap <right> ' . size_max . '<c-w>>'
+execute 'nnoremap <up> ' . size_max . '<c-w>+'
+execute 'nnoremap <down> ' . size_max . '<c-w>-'
+execute 'nnoremap <c-left> ' . size_min . '<c-w><'
+execute 'nnoremap <c-right> ' . size_min . '<c-w>>'
+execute 'nnoremap <c-up> ' . size_min . '<c-w>+'
+execute 'nnoremap <c-down> ' . size_min . '<c-w>-'
+
 nnoremap <F5> :lcd %:p:h<cr>
 
 " Define la autocmd para archivos HTML
-autocmd BufNewFile *.html execute "read $HOME/.config/vim/.vim/template/.web"
+autocmd BufNewFile *.html execute "-1read $HOME/.config/vim/.vim/template/.web"
 
 
 let g:netrw_browsex_viewer= "firefox"
+
+source /$HOME/.config/vim/.vim/editor/numeroVentana.vim
+set statusline=\ [№\ %{WindowNumber()}]✔\ %f\ ✘(№\ %n)
+
+
