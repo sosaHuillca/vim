@@ -28,7 +28,7 @@ set autoindent
 set lazyredraw
 set ttyfast
 "configuracion
-let g:netrw_keepdir = 0
+let g:netrw_keepdir = 1
 let g:netrw_banner = 0
 
 set omnifunc=syntaxcomplete#Complete
@@ -45,8 +45,7 @@ let g:netrw_liststyle = 4
 "let g:netrw_browse_split = 4
 set splitbelow splitright
 
-let g:netrw_banner = 0
-"let g:netrw_preview = 1
+let g:netrw_preview = 1
 
 "let g:netrw_alto = 1
 "let g:netrw_splitbelow = 0
@@ -54,6 +53,9 @@ source /$HOME/.config/vim/.vim/lenguajes/javascript.vim
 autocmd BufEnter *.js if &filetype == 'javascript' | call Js() | endif
 source /$HOME/.config/vim/.vim/lenguajes/css.vim
 autocmd BufEnter *.css if &filetype == 'css' | call Css() | endif
+source /$HOME/.config/vim/.vim/lenguajes/html.vim
+autocmd BufEnter *.html if &filetype == 'html' | call Html() | endif
+autocmd BufNewFile *.html if &filetype == 'html' | execute "-1read $HOME/.config/vim/.vim/template/.web" | exec "normal! 3jf>l" | exec "startinsert" | endif
 "configurando :
 noremap ; :
 noremap : ;
@@ -84,7 +86,7 @@ execute 'nnoremap <c-down> ' . size_min . '<c-w>-'
 nnoremap <F5> :lcd %:p:h<cr>
 
 " Define la autocmd para archivos HTML
-autocmd BufNewFile *.html execute "-1read $HOME/.config/vim/.vim/template/.web"
+"autocmd BufNewFile *.html execute "-1read $HOME/.config/vim/.vim/template/.web"
 
 
 let g:netrw_browsex_viewer= "firefox"
